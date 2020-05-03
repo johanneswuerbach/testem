@@ -47,4 +47,7 @@ jobs:
           node-version: ${{ matrix.node }}
       - run: npm ci
       - run: npm test
-      - run: npm run integration
+      - name: npm run integration
+        uses: GabrielBB/xvfb-action@v1.0
+        with:
+          run: npm run integration
